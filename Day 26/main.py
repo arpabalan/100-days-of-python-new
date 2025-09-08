@@ -1,4 +1,4 @@
-
+import random
 
 
 numbers = [1,2,3]
@@ -30,6 +30,16 @@ print(new_list)
 new_list = [new_item for item in list if test]
 """
 
+
+############# dictionary comprehension################
+# new_dictionary = {item:value for item in list}
+# new_dictionary = {key:value for (key,value) in dictionary.items()}
+# new_dictionary = {key:value for (key,value) in dictionary.items() if test}
+
 names = ["Alex", "Beth", "Dave","Caroline", "Eleanor","Freddie"]
 new_list = [name.upper() for name in names if len(name) > 5]
 print(new_list)
+students = {student:random.randint(1,100) for student in names}
+print(students)
+pass_students = {student:score for (student,score) in students.items() if score >= 60}
+print(pass_students)
