@@ -1,5 +1,6 @@
 import random
 
+import pandas
 
 numbers = [1,2,3]
 """new_list = []
@@ -38,8 +39,22 @@ new_list = [new_item for item in list if test]
 
 names = ["Alex", "Beth", "Dave","Caroline", "Eleanor","Freddie"]
 new_list = [name.upper() for name in names if len(name) > 5]
-print(new_list)
+#print(new_list)
 students = {student:random.randint(1,100) for student in names}
-print(students)
+#print(students)
 pass_students = {student:score for (student,score) in students.items() if score >= 60}
-print(pass_students)
+#print(pass_students)
+
+############ looping through pandas dataframe #############
+
+student_dict = {
+    "student":["Angela","James", "lily"],
+    "score":[56,76,98]
+}
+
+
+student_data_Frame = pandas.DataFrame(student_dict)
+print(student_data_Frame)
+for index,row in student_data_Frame.iterrows():
+    if row.student == "Angela":
+        print(row.score)
